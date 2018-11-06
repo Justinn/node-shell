@@ -2,6 +2,8 @@ const pwd = require('./pwd');
 const ls = require('./ls');
 const cat = require('./cat');
 const curl = require('./curl');
+const date = require('./date');
+const echo = require('./echo');
 
 const done = output => {
     console.log(output);
@@ -20,6 +22,10 @@ process.stdin.on('data', data => {
   }
   if (cmd === 'pwd') pwd(done);
   if (cmd === 'ls') ls(done);
+  if (cmd === 'date') date(done);
+  if (args[0] === 'echo') {
+    echo(done, args[1].replace(/'/g, ''));
+  }
 });
 
 
