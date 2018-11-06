@@ -1,5 +1,5 @@
-function pwd() {
-    console.log(`${process.cwd()}`);
+function pwd(done) {
+    done(`${process.cwd()}`);
 }
 
 module.exports = pwd;
